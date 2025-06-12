@@ -285,7 +285,7 @@
                 </div>
 
                 <div class="flex justify-center">
-                    <img src="/placeholder.svg?height=300&width=200" alt="Cápsulas NLINE - Verde y blanco" class="max-w-full h-auto rounded-lg shadow-md">
+                    <img src="/img/tabletas.png" alt="Cápsulas NLINE - Verde y blanco" class="max-w-full h-auto rounded-lg shadow-md">
                 </div>
 
                 <div class="space-y-4">
@@ -323,7 +323,7 @@
         <div class="container mx-auto px-4">
             <div class="flex justify-center">
                 <div class="max-w-4xl">
-                    <img src="/placeholder.svg?height=400&width=800" alt="Oferta NLINE - 50% de descuento - De 898bs por 449bs" class="w-full h-auto rounded-lg shadow-lg">
+                    <img src="/img/promocion.png" alt="Oferta NLINE - 50% de descuento - De 898bs por 449bs" class="w-full h-auto rounded-lg shadow-lg">
                 </div>
             </div>
         </div>
@@ -409,15 +409,15 @@
     </section>
 
     <!-- Registration Form -->
-    <section class="py-12 bg-gray-50">
+    <section class="py-12 bg-gray-50" id="registration">
         <div class="container mx-auto px-4">
             <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
                 <h2 class="text-2xl font-bold text-center mb-2">Registrarse para obtener 50% de descuento</h2>
                 <p class="text-center text-gray-600 mb-6">Completa el formulario para registrarte.</p>
 
-                <form class="space-y-4" id="mainForm">
+                <form class="space-y-4" id="registration-form" onsubmit="submitRegistration(event)">
                     <div>
-                        <input type="text" placeholder="Nombre y Apellido" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
+                        <input type="text" id="nombres" placeholder="Nombre y Apellido" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
                     </div>
 
                     <div class="grid grid-cols-4 gap-2">
@@ -425,12 +425,12 @@
                             <input type="text" value="+591" disabled class="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md">
                         </div>
                         <div class="col-span-3">
-                            <input type="tel" placeholder="Teléfono" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
+                            <input type="tel" id="telefono" placeholder="Teléfono" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
                         </div>
                     </div>
 
                     <div>
-                        <select class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
+                        <select id="ciudad" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
                             <option value="">Selecciona tu departamento</option>
                             <option value="la-paz">La Paz</option>
                             <option value="santa-cruz">Santa Cruz</option>
@@ -445,7 +445,7 @@
                     </div>
 
                     <div>
-                        <textarea placeholder="Comentario" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" rows="4"></textarea>
+                        <textarea placeholder="Comentario" id="comentario" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" rows="4"></textarea>
                     </div>
 
                     <button type="submit" class="w-full bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded transition-colors">ENVIAR FORMULARIO</button>
@@ -584,10 +584,10 @@
     </section>
 
     <!-- Formulario Flotante -->
-    <div id="floatingForm" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+    <div id="registrationModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
         <div class="bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 p-1 rounded-2xl shadow-2xl max-w-sm w-full slide-in-bottom">
             <div class="bg-white rounded-xl relative">
-                <button id="closeForm" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600 transition-colors z-10 bg-white rounded-full p-1">
+                <button id="closeForm" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600 transition-colors z-10 bg-white rounded-full p-1" onclick="handleCloseForm()">
                     <i data-lucide="x" class="w-5 h-5"></i>
                 </button>
 
@@ -600,17 +600,17 @@
                         <p class="text-sm text-gray-600">Transforma tu cuerpo con NLINE</p>
                     </div>
 
-                    <form class="space-y-3" id="floatingFormData">
-                        <input type="text" placeholder="Tu nombre completo" class="w-full px-3 py-2 border-2 border-purple-200 focus:border-purple-500 rounded-lg" required>
+                    <form class="space-y-3" id="registration-form" onsubmit="submitModalRegistration(event)">
+                        <input type="text" id="modal-nombres" placeholder="Tu nombre completo" class="w-full px-3 py-2 border-2 border-purple-200 focus:border-purple-500 rounded-lg" required>
 
                         <div class="flex">
                             <div class="w-16 flex-shrink-0">
                                 <input type="text" value="+591" disabled class="w-full px-3 py-2 border-2 border-r-0 border-red-200 bg-gray-50 rounded-r-none rounded-l-lg text-center">
                             </div>
-                            <input type="tel" placeholder="7XXXXXXX" class="w-full px-3 py-2 border-2 border-l-0 border-red-200 focus:border-red-500 rounded-l-none rounded-r-lg flex-grow" required>
+                            <input type="tel" id="modal-telefono" placeholder="7XXXXXXX" class="w-full px-3 py-2 border-2 border-l-0 border-red-200 focus:border-red-500 rounded-l-none rounded-r-lg flex-grow" required>
                         </div>
 
-                        <select class="w-full px-3 py-2 border-2 border-orange-200 focus:border-orange-500 rounded-lg text-sm" required>
+                        <select id="modal-ciudad" class="w-full px-3 py-2 border-2 border-orange-200 focus:border-orange-500 rounded-lg text-sm" required>
                             <option value="">🏙️ Selecciona tu departamento</option>
                             <option value="la-paz">La Paz</option>
                             <option value="santa-cruz">Santa Cruz</option>
@@ -705,32 +705,75 @@
         let openFaq = 0;
 
         // Elementos del DOM
-        const floatingForm = document.getElementById('floatingForm');
-        const floatingButton = document.getElementById('floatingButton');
-        const closeFormBtn = document.getElementById('closeForm');
+ const registrationModal = document.getElementById('registrationModal');
+const floatingButton = document.getElementById('floatingButton');
+const closeFormBtn = document.getElementById('closeForm');
 
-        // Función para cerrar el formulario flotante
-        function handleCloseForm() {
-            showForm = false;
-            floatingForm.classList.add('hidden');
-            
-            setTimeout(() => {
-                showRegisterButton = true;
-                floatingButton.classList.remove('hidden');
-            }, 500);
-        }
+// Función para cerrar el formulario flotante
+function handleCloseForm() {
+    showForm = false;
+    registrationModal.classList.add('hidden');
+    
+    setTimeout(() => {
+        showRegisterButton = true;
+        floatingButton.classList.remove('hidden');
+    }, 500);
+}
 
-        // Función para mostrar el formulario flotante
-        function handleRegister() {
-            showRegisterButton = false;
-            showForm = true;
-            floatingButton.classList.add('hidden');
-            floatingForm.classList.remove('hidden');
-        }
+// Función para mostrar el formulario flotante
+function handleRegister() {
+    showRegisterButton = false;
+    showForm = true;
+    floatingButton.classList.add('hidden');
+    registrationModal.classList.remove('hidden');
+}
 
         // Event listeners
         closeFormBtn.addEventListener('click', handleCloseForm);
         floatingButton.addEventListener('click', handleRegister);
+
+                   function submitModalRegistration(event) {
+            event.preventDefault();
+            
+            const nombres = document.getElementById('modal-nombres').value;
+            const telefono = document.getElementById('modal-telefono').value;
+            const ciudad = document.getElementById('modal-ciudad').value;
+
+
+            try {
+                const myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+                myHeaders.append("Allow-Control-Allow-Origin", "*");
+                
+                const raw = JSON.stringify({
+                    "nombres": nombres,
+                    "telefono": telefono,
+                    "ciudad": ciudad,
+ 
+                });
+
+                const requestOptions = {
+                    method: "POST",
+                    headers: myHeaders,
+                    body: raw,
+                    redirect: "follow",
+                    mode: "no-cors"
+                };
+
+                fetch("https://crm.servisofts.com/http/rest/campana/me_interesa/c145d4a2-ed14-434a-a0d9-7d394e426d1c", requestOptions)
+                    .then((response) => response.text())
+                    .then((result) => console.log(result))
+                    .catch((error) => console.error(error));
+            } catch (error) {
+                console.error("Error en el envío:", error);
+            }
+
+            alert('¡Gracias por registrarte! Un operador se pondrá en contacto contigo pronto para confirmar tu pedido con 50% de descuento.');
+            event.target.reset();
+            handleCloseForm();
+        }
+
+
 
         // FAQ functionality
         document.querySelectorAll('.faq-button').forEach(button => {
@@ -766,17 +809,7 @@
             });
         });
 
-        // Form submissions
-        document.getElementById('mainForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('¡Gracias por tu registro! Te contactaremos pronto.');
-        });
 
-        document.getElementById('floatingFormData').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('¡Gracias por tu registro! Te contactaremos pronto.');
-            handleCloseForm();
-        });
 
         // Mostrar el primer FAQ por defecto
         document.addEventListener('DOMContentLoaded', function() {
@@ -789,6 +822,48 @@
                 lucide.createIcons();
             }
         });
+
+            function submitRegistration(event) {
+            event.preventDefault();
+            
+            const nombres = document.getElementById('nombres').value;
+            const telefono = document.getElementById('telefono').value;
+            const ciudad = document.getElementById('ciudad').value;
+            const comentario = document.getElementById('comentario').value;
+
+            try {
+                const myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+                myHeaders.append("Allow-Control-Allow-Origin", "*");
+                
+                const raw = JSON.stringify({
+                    "nombres": nombres,
+                    "telefono": telefono,
+                    "ciudad": ciudad,
+                    "comentario": comentario,
+                });
+
+                const requestOptions = {
+                    method: "POST",
+                    headers: myHeaders,
+                    body: raw,
+                    redirect: "follow",
+                    mode: "no-cors"
+                };
+
+                fetch("https://crm.servisofts.com/http/rest/campana/me_interesa/c145d4a2-ed14-434a-a0d9-7d394e426d1c", requestOptions)
+                    .then((response) => response.text())
+                    .then((result) => console.log(result))
+                    .catch((error) => console.error(error));
+            } catch (error) {
+                console.error("Error en el envío:", error);
+            }
+
+            alert('¡Gracias por registrarte! Un operador se pondrá en contacto contigo pronto para confirmar tu pedido con 50% de descuento.');
+            event.target.reset();
+        }
+
+ 
     </script>
 </body>
 </html>
