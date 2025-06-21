@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,29 +9,57 @@
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <style>
         @keyframes scroll {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
         }
+
         .animate-scroll {
             animation: scroll 20s linear infinite;
         }
+
         @keyframes slideInFromBottom {
-            0% { transform: translateY(100%); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
+
         @keyframes zoomIn {
-            0% { transform: scale(0.5); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
+
         .slide-in-bottom {
             animation: slideInFromBottom 0.3s ease-out;
         }
+
         .zoom-in {
             animation: zoomIn 0.5s ease-out;
         }
-        .hidden { display: none !important; }
+
+        .hidden {
+            display: none !important;
+        }
     </style>
 </head>
+
 <body class="min-h-screen bg-white">
     <!-- Top Bar -->
     <div class="bg-gray-100 py-2">
@@ -69,12 +98,14 @@
 
     <!-- Hero Section -->
     <section class="py-16 bg-gradient-to-br from-pink-50 to-pink-100 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-radial from-pink-200 to-transparent opacity-50 rounded-full scale-150"></div>
+        <div class="absolute inset-0 bg-gradient-radial from-pink-200 to-transparent opacity-50 rounded-full scale-150">
+        </div>
         <div class="container mx-auto px-4 relative z-10">
             <div class="text-center mb-12">
                 <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Mejora tu silueta, cuerpo y vida</h1>
                 <p class="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                    Nuestra fórmula científica con ingredientes 100% naturales te ayuda a perder peso de forma progresiva en 8
+                    Nuestra fórmula científica con ingredientes 100% naturales te ayuda a perder peso de forma
+                    progresiva en 8
                     a 12 semanas. Elimina grasa, reduce la hinchazón y controla el apetito para que descubras una nueva
                     versión de ti. ¡Hecho en Bolivia con estándares internacionales!
                 </p>
@@ -85,52 +116,60 @@
                 <!-- Left Ingredients -->
                 <div class="space-y-6">
                     <div class="flex items-start space-x-3">
-                        <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <div
+                            class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                             <span class="text-white font-bold text-sm">+</span>
                         </div>
                         <div>
                             <h3 class="font-semibold text-gray-800 mb-1">Té Verde</h3>
                             <p class="text-sm text-gray-600">
-                                Antioxidante; estimula el metabolismo, la quema de grasa y los niveles de energía; apoya la salud
+                                Antioxidante; estimula el metabolismo, la quema de grasa y los niveles de energía; apoya
+                                la salud
                                 cardiovascular.
                             </p>
                         </div>
                     </div>
 
                     <div class="flex items-start space-x-3">
-                        <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <div
+                            class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                             <span class="text-white font-bold text-sm">+</span>
                         </div>
                         <div>
                             <h3 class="font-semibold text-gray-800 mb-1">Extracto de Garcinia Cambogia</h3>
                             <p class="text-sm text-gray-600">
-                                Modera el apetito y reduce antojos; optimiza el uso de alimentos como energía, evitando su
+                                Modera el apetito y reduce antojos; optimiza el uso de alimentos como energía, evitando
+                                su
                                 almacenamiento como grasa.
                             </p>
                         </div>
                     </div>
 
                     <div class="flex items-start space-x-3">
-                        <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <div
+                            class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                             <span class="text-white font-bold text-sm">+</span>
                         </div>
                         <div>
                             <h3 class="font-semibold text-gray-800 mb-1">Omega 3</h3>
                             <p class="text-sm text-gray-600">
-                                Promueve un perfil lipídico saludable y la salud cardiovascular; contribuye al metabolismo eficiente
+                                Promueve un perfil lipídico saludable y la salud cardiovascular; contribuye al
+                                metabolismo eficiente
                                 de grasas y a niveles adecuados de triglicéridos.
                             </p>
                         </div>
                     </div>
 
                     <div class="flex items-start space-x-3">
-                        <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <div
+                            class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                             <span class="text-white font-bold text-sm">+</span>
                         </div>
                         <div>
                             <h3 class="font-semibold text-gray-800 mb-1">Cactus de Nopal</h3>
                             <p class="text-sm text-gray-600">
-                                Alto en fibra; prolonga la saciedad ayudando al control de porciones e ingesta calórica; apoya la
+                                Alto en fibra; prolonga la saciedad ayudando al control de porciones e ingesta calórica;
+                                apoya la
                                 salud digestiva y el tránsito intestinal.
                             </p>
                         </div>
@@ -140,59 +179,68 @@
                 <!-- Center Product Image -->
                 <div class="flex justify-center">
                     <div class="bg-white rounded-3xl p-8 max-w-sm shadow-lg">
-                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Imagen_de_WhatsApp_2025-05-26_a_las_00.30.33_2a664df2_5cc68ac3-b1f2-4c59-be79-18b4bb4318f4.jpg-JMC2h7YjIWofkhP7Nc3b3oZDIwhHot.jpeg" alt="Producto NLINE - Suplemento natural para bajar de peso" class="w-full h-auto">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Imagen_de_WhatsApp_2025-05-26_a_las_00.30.33_2a664df2_5cc68ac3-b1f2-4c59-be79-18b4bb4318f4.jpg-JMC2h7YjIWofkhP7Nc3b3oZDIwhHot.jpeg"
+                            alt="Producto NLINE - Suplemento natural para bajar de peso" class="w-full h-auto">
                     </div>
                 </div>
 
                 <!-- Right Ingredients -->
                 <div class="space-y-6">
                     <div class="flex items-start space-x-3">
-                        <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <div
+                            class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                             <span class="text-white font-bold text-sm">+</span>
                         </div>
                         <div>
                             <h3 class="font-semibold text-gray-800 mb-1">Extracto de Centella Asiática</h3>
                             <p class="text-sm text-gray-600">
-                                Favorece la digestión y el tránsito intestinal; cuida la salud de la piel estimulando la producción
+                                Favorece la digestión y el tránsito intestinal; cuida la salud de la piel estimulando la
+                                producción
                                 de colágeno.
                             </p>
                         </div>
                     </div>
 
                     <div class="flex items-start space-x-3">
-                        <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <div
+                            class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                             <span class="text-white font-bold text-sm">+</span>
                         </div>
                         <div>
                             <h3 class="font-semibold text-gray-800 mb-1">Vitamina B12</h3>
                             <p class="text-sm text-gray-600">
-                                Combate la fatiga convirtiendo alimentos en energía; apoya el metabolismo celular y la formación de
+                                Combate la fatiga convirtiendo alimentos en energía; apoya el metabolismo celular y la
+                                formación de
                                 glóbulos rojos, mejorando vitalidad y enfoque.
                             </p>
                         </div>
                     </div>
 
                     <div class="flex items-start space-x-3">
-                        <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <div
+                            class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                             <span class="text-white font-bold text-sm">+</span>
                         </div>
                         <div>
                             <h3 class="font-semibold text-gray-800 mb-1">Vitamina D</h3>
                             <p class="text-sm text-gray-600">
-                                Fortalece el sistema inmunológico, crucial para el funcionamiento óptimo del organismo y la
+                                Fortalece el sistema inmunológico, crucial para el funcionamiento óptimo del organismo y
+                                la
                                 respuesta eficaz durante cambios de estilo de vida.
                             </p>
                         </div>
                     </div>
 
                     <div class="flex items-start space-x-3">
-                        <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <div
+                            class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                             <span class="text-white font-bold text-sm">+</span>
                         </div>
                         <div>
                             <h3 class="font-semibold text-gray-800 mb-1">Calcio</h3>
                             <p class="text-sm text-gray-600">
-                                Esencial para la fortaleza, densidad y salud de los huesos, fundamental para el bienestar y la
+                                Esencial para la fortaleza, densidad y salud de los huesos, fundamental para el
+                                bienestar y la
                                 movilidad.
                             </p>
                         </div>
@@ -285,7 +333,8 @@
                 </div>
 
                 <div class="flex justify-center">
-                    <img src="/img/tabletas.png" alt="Cápsulas NLINE - Verde y blanco" class="max-w-full h-auto rounded-lg shadow-md">
+                    <img src="/img/tabletas.png" alt="Cápsulas NLINE - Verde y blanco"
+                        class="max-w-full h-auto rounded-lg shadow-md">
                 </div>
 
                 <div class="space-y-4">
@@ -323,7 +372,8 @@
         <div class="container mx-auto px-4">
             <div class="flex justify-center">
                 <div class="max-w-4xl">
-                    <img src="/img/promocion.png" alt="Oferta NLINE - 50% de descuento - De 898bs por 449bs" class="w-full h-auto rounded-lg shadow-lg">
+                    <img src="/img/promocion.png" alt="Oferta NLINE - 50% de descuento - De 898bs por 449bs"
+                        class="w-full h-auto rounded-lg shadow-lg">
                 </div>
             </div>
         </div>
@@ -339,12 +389,13 @@
                 <!-- Testimonio 1 -->
                 <div class="border-2 border-purple-100 shadow-lg hover:shadow-xl transition-shadow rounded-lg">
                     <div class="text-center p-6">
-                        <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mx-auto mb-4 flex items-center justify-center">
                             <span class="text-white font-bold text-xl">L</span>
                         </div>
                         <h3 class="text-lg font-semibold">Lucia Mamani</h3>
                         <p class="text-purple-600 font-medium mb-4">La Paz - Perdió 18 kg en 4 meses</p>
-                        
+
                         <div class="flex justify-center mb-4">
                             <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
                             <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
@@ -353,7 +404,8 @@
                             <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
                         </div>
                         <p class="text-gray-600 text-center italic">
-                            "NLINE me cambió la vida. En 4 meses bajé 18 kilos sin pasar hambre. Lo mejor es que es 100% natural y
+                            "NLINE me cambió la vida. En 4 meses bajé 18 kilos sin pasar hambre. Lo mejor es que es 100%
+                            natural y
                             hecho en Bolivia. Mi familia no puede creer la transformación. ¡Súper recomendado!"
                         </p>
                     </div>
@@ -362,12 +414,13 @@
                 <!-- Testimonio 2 -->
                 <div class="border-2 border-purple-100 shadow-lg hover:shadow-xl transition-shadow rounded-lg">
                     <div class="text-center p-6">
-                        <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-blue-400 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-r from-green-400 to-blue-400 rounded-full mx-auto mb-4 flex items-center justify-center">
                             <span class="text-white font-bold text-xl">C</span>
                         </div>
                         <h3 class="text-lg font-semibold">Carlos Quispe</h3>
                         <p class="text-purple-600 font-medium mb-4">Santa Cruz - Perdió 25 kg en 5 meses</p>
-                        
+
                         <div class="flex justify-center mb-4">
                             <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
                             <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
@@ -376,7 +429,8 @@
                             <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
                         </div>
                         <p class="text-gray-600 text-center italic">
-                            "Probé muchas pastillas importadas sin resultados. NLINE es diferente, es boliviano y realmente
+                            "Probé muchas pastillas importadas sin resultados. NLINE es diferente, es boliviano y
+                            realmente
                             funciona. Perdí 25 kilos y me siento como nuevo. El envío a Santa Cruz fue súper rápido."
                         </p>
                     </div>
@@ -385,12 +439,13 @@
                 <!-- Testimonio 3 -->
                 <div class="border-2 border-purple-100 shadow-lg hover:shadow-xl transition-shadow rounded-lg">
                     <div class="text-center p-6">
-                        <div class="w-16 h-16 bg-gradient-to-r from-red-400 to-orange-400 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-r from-red-400 to-orange-400 rounded-full mx-auto mb-4 flex items-center justify-center">
                             <span class="text-white font-bold text-xl">M</span>
                         </div>
                         <h3 class="text-lg font-semibold">María Condori</h3>
                         <p class="text-purple-600 font-medium mb-4">Cochabamba - Perdió 15 kg en 3 meses</p>
-                        
+
                         <div class="flex justify-center mb-4">
                             <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
                             <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
@@ -399,7 +454,8 @@
                             <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
                         </div>
                         <p class="text-gray-600 text-center italic">
-                            "Como madre trabajadora necesitaba algo fácil y efectivo. NLINE me ayudó a perder 15 kilos sin
+                            "Como madre trabajadora necesitaba algo fácil y efectivo. NLINE me ayudó a perder 15 kilos
+                            sin
                             complicaciones. Ahora tengo más energía para mis hijos y me siento hermosa otra vez."
                         </p>
                     </div>
@@ -413,46 +469,60 @@
         <div class="container mx-auto px-4">
             <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
                 <h2 class="text-2xl font-bold text-center mb-2">Registrarse para obtener 50% de descuento</h2>
-                <p class="text-center text-gray-600 mb-6">Completa el formulario para registrarte.</p>
+                <p class="text-center text-gray-600 mb-6">Completa el formulario para registrarte</p>
 
                 <form class="space-y-4" id="registration-form" onsubmit="submitRegistration(event)">
                     <div>
-                        <input type="text" id="nombres" placeholder="Nombre y Apellido" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
+                        <input type="text" id="nombres" placeholder="Nombre y Apellido"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                            required>
                     </div>
 
                     <div class="grid grid-cols-4 gap-2">
                         <div class="col-span-1">
-                            <input type="text" value="+591" disabled class="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md">
+                            <input type="text" id="codigo2" value="+591" disabled
+                                class="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md">
                         </div>
                         <div class="col-span-3">
-                            <input type="tel" id="telefono" placeholder="Teléfono" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
+                            <input type="tel" id="telefono" placeholder="Teléfono"
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                                required>
                         </div>
                     </div>
 
                     <div>
-                        <select id="ciudad" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
+                        <select id="ciudad"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                            required>
                             <option value="">Selecciona tu departamento</option>
-                            <option value="la-paz">La Paz</option>
-                            <option value="santa-cruz">Santa Cruz</option>
-                            <option value="cochabamba">Cochabamba</option>
-                            <option value="oruro">Oruro</option>
-                            <option value="potosi">Potosí</option>
-                            <option value="tarija">Tarija</option>
-                            <option value="chuquisaca">Chuquisaca</option>
-                            <option value="beni">Beni</option>
-                            <option value="pando">Pando</option>
+                            <option value="La Paz">La Paz</option>
+                            <option value="Santa Cruz">Santa Cruz</option>
+                            <option value="Cochabamba">Cochabamba</option>
+                            <option value="Oruro">Oruro</option>
+                            <option value="Potosi">Potosí</option>
+                            <option value="Tarija">Tarija</option>
+                            <option value="Chuquisaca">Chuquisaca</option>
+                            <option value="Beni">Beni</option>
+                            <option value="Pando">Pando</option>
                         </select>
                     </div>
 
                     <div>
-                        <textarea placeholder="Comentario" id="comentario" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" rows="4"></textarea>
+                        <textarea placeholder="Comentario" id="comentario"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                            rows="4"></textarea>
                     </div>
 
-                    <button type="submit" class="w-full bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded transition-colors">ENVIAR FORMULARIO</button>
+                    <button type="submit"
+                        class="w-full bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded transition-colors">ENVIAR
+                        FORMULARIO</button>
 
                     <p class="text-xs text-gray-500 text-center mt-4">
-                        Al registrarte, aceptas recibir mensajes de marketing en el número de teléfono proporcionado. Consulta
-                        nuestra <a href="terminos.html" target="_blank" class="underline text-blue-600 hover:text-blue-800">Política de privacidad y Términos y Condiciones</a> para obtener más información.
+                        Al registrarte, aceptas recibir mensajes de marketing en el número de teléfono proporcionado.
+                        Consulta
+                        nuestra <a href="terminos.html" target="_blank"
+                            class="underline text-blue-600 hover:text-blue-800">Política de privacidad y Términos y
+                            Condiciones</a> para obtener más información.
                     </p>
                 </form>
             </div>
@@ -466,15 +536,19 @@
 
             <div class="max-w-3xl mx-auto space-y-4">
                 <div class="border rounded-lg overflow-hidden">
-                    <button class="flex justify-between items-center w-full p-4 text-left font-medium faq-button" data-faq="0">
+                    <button class="flex justify-between items-center w-full p-4 text-left font-medium faq-button"
+                        data-faq="0">
                         <span>¿Qué es N-LINE y cuáles son sus principales beneficios?</span>
                         <i data-lucide="chevron-down" class="w-5 h-5 faq-icon"></i>
                     </button>
                     <div class="p-4 bg-gray-50 border-t faq-content" data-faq="0">
                         <p class="mb-4">
-                            N-LINE es un suplemento alimenticio en cápsulas, formulado con ingredientes naturales diseñado para
-                            ser tu aliado en el camino hacia un estilo de vida más saludable. Sus componentes, como el Té Verde,
-                            Garcinia Cambogia, Centella Asiática, Cactus de Nopal y una combinación de vitaminas y minerales,
+                            N-LINE es un suplemento alimenticio en cápsulas, formulado con ingredientes naturales
+                            diseñado para
+                            ser tu aliado en el camino hacia un estilo de vida más saludable. Sus componentes, como el
+                            Té Verde,
+                            Garcinia Cambogia, Centella Asiática, Cactus de Nopal y una combinación de vitaminas y
+                            minerales,
                             trabajan en sinergia para ayudarte a:
                         </p>
                         <ul class="list-disc pl-5 space-y-2">
@@ -489,7 +563,8 @@
                 </div>
 
                 <div class="border rounded-lg overflow-hidden">
-                    <button class="flex justify-between items-center w-full p-4 text-left font-medium faq-button" data-faq="1">
+                    <button class="flex justify-between items-center w-full p-4 text-left font-medium faq-button"
+                        data-faq="1">
                         <span>¿N-LINE tiene efectos secundarios?</span>
                         <i data-lucide="chevron-down" class="w-5 h-5 faq-icon"></i>
                     </button>
@@ -500,12 +575,15 @@
                         </p>
                         <ul class="list-disc pl-5 space-y-2">
                             <li>
-                                No se recomienda su consumo en personas con hipertensión arterial, menores de 18 años, mujeres
+                                No se recomienda su consumo en personas con hipertensión arterial, menores de 18 años,
+                                mujeres
                                 embarazadas o en período de lactancia, salvo autorización médica explícita.
                             </li>
                             <li>
-                                Si tienes alguna condición médica preexistente o estás bajo tratamiento médico, es crucial
-                                consultar con tu médico o un profesional de la salud cualificado antes de comenzar a tomar N-LINE
+                                Si tienes alguna condición médica preexistente o estás bajo tratamiento médico, es
+                                crucial
+                                consultar con tu médico o un profesional de la salud cualificado antes de comenzar a
+                                tomar N-LINE
                                 o cualquier suplemento.
                             </li>
                             <li>En caso de duda, siempre consulta a tu médico o nutricionista.</li>
@@ -514,23 +592,29 @@
                 </div>
 
                 <div class="border rounded-lg overflow-hidden">
-                    <button class="flex justify-between items-center w-full p-4 text-left font-medium faq-button" data-faq="2">
+                    <button class="flex justify-between items-center w-full p-4 text-left font-medium faq-button"
+                        data-faq="2">
                         <span>¿Necesito hacer dieta y ejercicio para que N-LINE funcione?</span>
                         <i data-lucide="chevron-down" class="w-5 h-5 faq-icon"></i>
                     </button>
                     <div class="p-4 bg-gray-50 border-t faq-content hidden" data-faq="2">
                         <p>
-                            N-LINE está diseñado para actuar como un coadyuvante en tu proceso de bienestar. Funciona mejor y
-                            sus resultados se optimizan cuando se acompaña de un estilo de vida saludable, que incluye una
-                            alimentación consciente y equilibrada, y actividad física regular (incluso moderada como caminar).
-                            Si bien puede ofrecer apoyo incluso sin rutinas físicas exigentes, la combinación con hábitos
+                            N-LINE está diseñado para actuar como un coadyuvante en tu proceso de bienestar. Funciona
+                            mejor y
+                            sus resultados se optimizan cuando se acompaña de un estilo de vida saludable, que incluye
+                            una
+                            alimentación consciente y equilibrada, y actividad física regular (incluso moderada como
+                            caminar).
+                            Si bien puede ofrecer apoyo incluso sin rutinas físicas exigentes, la combinación con
+                            hábitos
                             saludables potenciará los resultados.
                         </p>
                     </div>
                 </div>
 
                 <div class="border rounded-lg overflow-hidden">
-                    <button class="flex justify-between items-center w-full p-4 text-left font-medium faq-button" data-faq="3">
+                    <button class="flex justify-between items-center w-full p-4 text-left font-medium faq-button"
+                        data-faq="3">
                         <span>¿Realizan envíos a toda Bolivia?</span>
                         <i data-lucide="chevron-down" class="w-5 h-5 faq-icon"></i>
                     </button>
@@ -585,15 +669,19 @@
 
     <!-- Formulario Flotante -->
     <div id="registrationModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div class="bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 p-1 rounded-2xl shadow-2xl max-w-sm w-full slide-in-bottom">
+        <div
+            class="bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 p-1 rounded-2xl shadow-2xl max-w-sm w-full slide-in-bottom">
             <div class="bg-white rounded-xl relative">
-                <button id="closeForm" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600 transition-colors z-10 bg-white rounded-full p-1" onclick="handleCloseForm()">
+                <button id="closeForm"
+                    class="absolute top-3 right-3 text-gray-400 hover:text-gray-600 transition-colors z-10 bg-white rounded-full p-1"
+                    onclick="handleCloseForm()">
                     <i data-lucide="x" class="w-5 h-5"></i>
                 </button>
 
                 <div class="p-6">
                     <div class="text-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full mx-auto mb-3 flex items-center justify-center animate-pulse">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full mx-auto mb-3 flex items-center justify-center animate-pulse">
                             <i data-lucide="zap" class="w-6 h-6 text-white"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-800 mb-1">¡50% OFF HOY!</h3>
@@ -601,29 +689,37 @@
                     </div>
 
                     <form class="space-y-3" id="registration-form" onsubmit="submitModalRegistration(event)">
-                        <input type="text" id="modal-nombres" placeholder="Tu nombre completo" class="w-full px-3 py-2 border-2 border-purple-200 focus:border-purple-500 rounded-lg" required>
+                        <input type="text" id="modal-nombres" placeholder="Tu nombre completo"
+                            class="w-full px-3 py-2 border-2 border-purple-200 focus:border-purple-500 rounded-lg"
+                            required>
 
                         <div class="flex">
                             <div class="w-16 flex-shrink-0">
-                                <input type="text" value="+591" disabled class="w-full px-3 py-2 border-2 border-r-0 border-red-200 bg-gray-50 rounded-r-none rounded-l-lg text-center">
+                                <input type="text" id="codigo" value="+591" disabled
+                                    class="w-full px-3 py-2 border-2 border-r-0 border-red-200 bg-gray-50 rounded-r-none rounded-l-lg text-center">
                             </div>
-                            <input type="tel" id="modal-telefono" placeholder="7XXXXXXX" class="w-full px-3 py-2 border-2 border-l-0 border-red-200 focus:border-red-500 rounded-l-none rounded-r-lg flex-grow" required>
+                            <input type="tel" id="modal-telefono" placeholder="7XXXXXXX"
+                                class="w-full px-3 py-2 border-2 border-l-0 border-red-200 focus:border-red-500 rounded-l-none rounded-r-lg flex-grow"
+                                required>
                         </div>
 
-                        <select id="modal-ciudad" class="w-full px-3 py-2 border-2 border-orange-200 focus:border-orange-500 rounded-lg text-sm" required>
+                        <select id="modal-ciudad"
+                            class="w-full px-3 py-2 border-2 border-orange-200 focus:border-orange-500 rounded-lg text-sm"
+                            required>
                             <option value="">🏙️ Selecciona tu departamento</option>
-                            <option value="la-paz">La Paz</option>
-                            <option value="santa-cruz">Santa Cruz</option>
-                            <option value="cochabamba">Cochabamba</option>
-                            <option value="oruro">Oruro</option>
-                            <option value="potosi">Potosí</option>
-                            <option value="tarija">Tarija</option>
-                            <option value="chuquisaca">Chuquisaca</option>
-                            <option value="beni">Beni</option>
-                            <option value="pando">Pando</option>
+                            <option value="La Paz">La Paz</option>
+                            <option value="Santa Cruz">Santa Cruz</option>
+                            <option value="Cochabamba">Cochabamba</option>
+                            <option value="Oruro">Oruro</option>
+                            <option value="Potosi">Potosí</option>
+                            <option value="Tarija">Tarija</option>
+                            <option value="Chuquisaca">Chuquisaca</option>
+                            <option value="Beni">Beni</option>
+                            <option value="Pando">Pando</option>
                         </select>
 
-                        <button type="submit" class="w-full bg-gradient-to-r from-green-500 via-blue-500 to-purple-600 hover:from-green-600 hover:via-blue-600 hover:to-purple-700 text-white font-bold py-3 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
+                        <button type="submit"
+                            class="w-full bg-gradient-to-r from-green-500 via-blue-500 to-purple-600 hover:from-green-600 hover:via-blue-600 hover:to-purple-700 text-white font-bold py-3 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
                             🎉 ¡QUIERO MI 50% DE DESCUENTO!
                         </button>
                     </form>
@@ -647,8 +743,10 @@
     </div>
 
     <!-- Botón de Registro Flotante -->
-    <div id="floatingButton" class="fixed bottom-8 left-0 right-0 flex justify-center z-40 pointer-events-none px-4 hidden">
-        <button class="pointer-events-auto bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-4 px-8 rounded-full shadow-2xl zoom-in hover:scale-110 transition-all">
+    <div id="floatingButton"
+        class="fixed bottom-8 left-0 right-0 flex justify-center z-40 pointer-events-none px-4 hidden">
+        <button
+            class="pointer-events-auto bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-4 px-8 rounded-full shadow-2xl zoom-in hover:scale-110 transition-all">
             <i data-lucide="zap" class="w-5 h-5 mr-2 inline"></i>
             ¡Obtén tu 50% de descuento!
         </button>
@@ -705,51 +803,52 @@
         let openFaq = 0;
 
         // Elementos del DOM
- const registrationModal = document.getElementById('registrationModal');
-const floatingButton = document.getElementById('floatingButton');
-const closeFormBtn = document.getElementById('closeForm');
+        const registrationModal = document.getElementById('registrationModal');
+        const floatingButton = document.getElementById('floatingButton');
+        const closeFormBtn = document.getElementById('closeForm');
 
-// Función para cerrar el formulario flotante
-function handleCloseForm() {
-    showForm = false;
-    registrationModal.classList.add('hidden');
-    
-    setTimeout(() => {
-        showRegisterButton = true;
-        floatingButton.classList.remove('hidden');
-    }, 500);
-}
+        // Función para cerrar el formulario flotante
+        function handleCloseForm() {
+            showForm = false;
+            registrationModal.classList.add('hidden');
 
-// Función para mostrar el formulario flotante
-function handleRegister() {
-    showRegisterButton = false;
-    showForm = true;
-    floatingButton.classList.add('hidden');
-    registrationModal.classList.remove('hidden');
-}
+            setTimeout(() => {
+                showRegisterButton = true;
+                floatingButton.classList.remove('hidden');
+            }, 500);
+        }
+
+        // Función para mostrar el formulario flotante
+        function handleRegister() {
+            showRegisterButton = false;
+            showForm = true;
+            floatingButton.classList.add('hidden');
+            registrationModal.classList.remove('hidden');
+        }
 
         // Event listeners
         closeFormBtn.addEventListener('click', handleCloseForm);
         floatingButton.addEventListener('click', handleRegister);
 
-                   function submitModalRegistration(event) {
+        function submitModalRegistration(event) {
             event.preventDefault();
-            
+
             const nombres = document.getElementById('modal-nombres').value;
             const telefono = document.getElementById('modal-telefono').value;
             const ciudad = document.getElementById('modal-ciudad').value;
+            const codigo = document.getElementById('codigo').value;
 
 
             try {
                 const myHeaders = new Headers();
                 myHeaders.append("Content-Type", "application/json");
                 myHeaders.append("Allow-Control-Allow-Origin", "*");
-                
+
                 const raw = JSON.stringify({
                     "nombres": nombres,
-                    "telefono": telefono,
-                    "ciudad": ciudad,
- 
+                    "telefono": codigo + " " + telefono,
+                    "departamento": ciudad,
+
                 });
 
                 const requestOptions = {
@@ -759,42 +858,50 @@ function handleRegister() {
                     redirect: "follow",
                     mode: "no-cors"
                 };
+                console.log("Enviando datos:", requestOptions);
 
-                fetch("https://crm.servisofts.com/http/rest/campana/me_interesa/c145d4a2-ed14-434a-a0d9-7d394e426d1c", requestOptions)
-                    .then((response) => response.text())
-                    .then((result) => console.log(result))
-                    .catch((error) => console.error(error));
+                // fetch("http://192.168.2.1:30051/rest/campana/me_interesa/3ecfe8db-31cc-4d02-9176-414b6f43ce8c", requestOptions) //prueba servisofts
+                fetch("https://crm.servisofts.com/http/rest/campana/me_interesa/c145d4a2-ed14-434a-a0d9-7d394e426d1c", requestOptions) //producción
+                    .then(response => response.text())
+                    .then((result) => {
+                        console.log("Respuesta del servidor:", result);
+                        alert('¡Gracias por registrarte! Un operador se pondrá en contacto contigo pronto para confirmar tu pedido con 50% de descuento.');
+                        event.target.reset();
+                        handleCloseForm();
+                    })
+                    .catch((error) => {
+                        alert('Teléfono inválido. Revisa el número ingresado.');
+                        console.error(error)
+                    });
             } catch (error) {
                 console.error("Error en el envío:", error);
             }
 
-            alert('¡Gracias por registrarte! Un operador se pondrá en contacto contigo pronto para confirmar tu pedido con 50% de descuento.');
-            event.target.reset();
-            handleCloseForm();
+
         }
 
 
 
         // FAQ functionality
         document.querySelectorAll('.faq-button').forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function () {
                 const faqIndex = this.getAttribute('data-faq');
                 const content = document.querySelector(`.faq-content[data-faq="${faqIndex}"]`);
                 const icon = this.querySelector('.faq-icon');
-                
+
                 // Cerrar todos los otros FAQs
                 document.querySelectorAll('.faq-content').forEach(otherContent => {
                     if (otherContent !== content) {
                         otherContent.classList.add('hidden');
                     }
                 });
-                
+
                 document.querySelectorAll('.faq-icon').forEach(otherIcon => {
                     if (otherIcon !== icon) {
                         otherIcon.setAttribute('data-lucide', 'chevron-down');
                     }
                 });
-                
+
                 // Toggle el FAQ actual
                 if (content.classList.contains('hidden')) {
                     content.classList.remove('hidden');
@@ -803,7 +910,7 @@ function handleRegister() {
                     content.classList.add('hidden');
                     icon.setAttribute('data-lucide', 'chevron-down');
                 }
-                
+
                 // Reinicializar iconos
                 lucide.createIcons();
             });
@@ -812,10 +919,10 @@ function handleRegister() {
 
 
         // Mostrar el primer FAQ por defecto
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const firstFaqContent = document.querySelector('.faq-content[data-faq="0"]');
             const firstFaqIcon = document.querySelector('.faq-button[data-faq="0"] .faq-icon');
-            
+
             if (firstFaqContent) {
                 firstFaqContent.classList.remove('hidden');
                 firstFaqIcon.setAttribute('data-lucide', 'chevron-up');
@@ -823,23 +930,24 @@ function handleRegister() {
             }
         });
 
-            function submitRegistration(event) {
+        function submitRegistration(event) {
             event.preventDefault();
-            
+
             const nombres = document.getElementById('nombres').value;
             const telefono = document.getElementById('telefono').value;
             const ciudad = document.getElementById('ciudad').value;
             const comentario = document.getElementById('comentario').value;
+            const codigo2 = document.getElementById('codigo2').value;
 
             try {
                 const myHeaders = new Headers();
                 myHeaders.append("Content-Type", "application/json");
                 myHeaders.append("Allow-Control-Allow-Origin", "*");
-                
+
                 const raw = JSON.stringify({
                     "nombres": nombres,
-                    "telefono": telefono,
-                    "ciudad": ciudad,
+                    "telefono": codigo2 + " " + telefono,
+                    "departamento": ciudad,
                     "comentario": comentario,
                 });
 
@@ -850,20 +958,28 @@ function handleRegister() {
                     redirect: "follow",
                     mode: "no-cors"
                 };
+                // fetch("http://192.168.2.1:30051/rest/campana/me_interesa/3ecfe8db-31cc-4d02-9176-414b6f43ce8c", requestOptions) //prueba servisofts
+                fetch("https://crm.servisofts.com/http/rest/campana/me_interesa/c145d4a2-ed14-434a-a0d9-7d394e426d1c", requestOptions) //producción
+                    .then(response => response.text())
+                    .then((result) => {
+                        console.log("Respuesta del servidor:", result);
+                        alert('¡Gracias por registrarte! Un operador se pondrá en contacto contigo pronto para confirmar tu pedido con 50% de descuento.');
+                        event.target.reset();
+                    })
+                    .catch((error) => {
+                        alert('Teléfono inválido. Revisa el número ingresado.');
+                        console.error(error)
+                    });
 
-                fetch("https://crm.servisofts.com/http/rest/campana/me_interesa/c145d4a2-ed14-434a-a0d9-7d394e426d1c", requestOptions)
-                    .then((response) => response.text())
-                    .then((result) => console.log(result))
-                    .catch((error) => console.error(error));
             } catch (error) {
                 console.error("Error en el envío:", error);
             }
 
-            alert('¡Gracias por registrarte! Un operador se pondrá en contacto contigo pronto para confirmar tu pedido con 50% de descuento.');
-            event.target.reset();
+
         }
 
- 
+
     </script>
 </body>
+
 </html>
