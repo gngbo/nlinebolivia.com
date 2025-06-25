@@ -7,6 +7,8 @@
     <title>NLINE Bolivia - Suplemento Natural para Bajar de Peso</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="/js/subirleads.js"></script>
+
     <style>
         @keyframes scroll {
             0% {
@@ -837,45 +839,51 @@
             const telefono = document.getElementById('modal-telefono').value;
             const ciudad = document.getElementById('modal-ciudad').value;
             const codigo = document.getElementById('codigo').value;
+            subirLeads({
+                key_campana: "c145d4a2-ed14-434a-a0d9-7d394e426d1c",
+                nombres: nombres,
+                telefonos: codigo + " " + telefono,
+                departamento: ciudad,
+                // comentario: comentario
+            })
 
+            // try {
+            //     const myHeaders = new Headers();
+            //     myHeaders.append("Content-Type", "application/json");
+            //     myHeaders.append("Allow-Control-Allow-Origin", "*");
 
-            try {
-                const myHeaders = new Headers();
-                myHeaders.append("Content-Type", "application/json");
-                myHeaders.append("Allow-Control-Allow-Origin", "*");
+            //     const raw = JSON.stringify({
+            //         "nombres": nombres,
+            //         "telefono": codigo + " " + telefono,
+            //         "departamento": ciudad,
 
-                const raw = JSON.stringify({
-                    "nombres": nombres,
-                    "telefono": codigo + " " + telefono,
-                    "departamento": ciudad,
+            //     });
 
-                });
+            //     const requestOptions = {
+            //         method: "POST",
+            //         headers: myHeaders,
+            //         body: raw,
+            //         redirect: "follow",
+            //         mode: "no-cors"
+            //     };
+            //     console.log("Enviando datos:", requestOptions);
 
-                const requestOptions = {
-                    method: "POST",
-                    headers: myHeaders,
-                    body: raw,
-                    redirect: "follow",
-                    mode: "no-cors"
-                };
-                console.log("Enviando datos:", requestOptions);
-
-                // fetch("http://192.168.2.1:30051/rest/campana/me_interesa/3ecfe8db-31cc-4d02-9176-414b6f43ce8c", requestOptions) //prueba servisofts
-                fetch("https://crm.servisofts.com/http/rest/campana/me_interesa/c145d4a2-ed14-434a-a0d9-7d394e426d1c", requestOptions) //producción
-                    .then(response => response.text())
-                    .then((result) => {
-                        console.log("Respuesta del servidor:", result);
-                        alert('¡Gracias por registrarte! Un operador se pondrá en contacto contigo pronto para confirmar tu pedido con 50% de descuento.');
-                        event.target.reset();
-                        handleCloseForm();
-                    })
-                    .catch((error) => {
-                        alert('Teléfono inválido. Revisa el número ingresado.');
-                        console.error(error)
-                    });
-            } catch (error) {
-                console.error("Error en el envío:", error);
-            }
+            //     // fetch("http://192.168.2.1:30051/rest/campana/me_interesa/3ecfe8db-31cc-4d02-9176-414b6f43ce8c", requestOptions) //prueba servisofts
+            //     fetch("https://crm.servisofts.com/http/rest/campana/me_interesa/c145d4a2-ed14-434a-a0d9-7d394e426d1c", requestOptions) //producción
+            //         .then(response => response.text())
+            //         .then((result) => {
+            //             console.log("Respuesta del servidor:", result);
+            //             alert('¡Gracias por registrarte! Un operador se pondrá en contacto contigo pronto para confirmar tu pedido con 50% de descuento.');
+            //             event.target.reset();
+            //             handleCloseForm();
+            //         })
+            //         .catch((error) => {
+            //             alert('Teléfono inválido. Revisa el número ingresado.');
+            //             console.error(error)
+            //         });
+            // } catch (error) {
+            //     console.error("Error en el envío:", error);
+            // }
 
 
         }
@@ -939,41 +947,53 @@
             const comentario = document.getElementById('comentario').value;
             const codigo2 = document.getElementById('codigo2').value;
 
-            try {
-                const myHeaders = new Headers();
-                myHeaders.append("Content-Type", "application/json");
-                myHeaders.append("Allow-Control-Allow-Origin", "*");
+            // keyDoctora_KaterineSanz =  9d857207-d049-4036-87c7-039e6acb2ea2
 
-                const raw = JSON.stringify({
-                    "nombres": nombres,
-                    "telefono": codigo2 + " " + telefono,
-                    "departamento": ciudad,
-                    "comentario": comentario,
-                });
+            subirLeads({
+                key_campana: "c145d4a2-ed14-434a-a0d9-7d394e426d1c",
+                nombres: nombres,
+                telefonos: codigo2 + " " + telefono,
+                departamento: ciudad,
+                comentario: comentario
+            })
 
-                const requestOptions = {
-                    method: "POST",
-                    headers: myHeaders,
-                    body: raw,
-                    redirect: "follow",
-                    mode: "no-cors"
-                };
-                // fetch("http://192.168.2.1:30051/rest/campana/me_interesa/3ecfe8db-31cc-4d02-9176-414b6f43ce8c", requestOptions) //prueba servisofts
-                fetch("https://crm.servisofts.com/http/rest/campana/me_interesa/c145d4a2-ed14-434a-a0d9-7d394e426d1c", requestOptions) //producción
-                    .then(response => response.text())
-                    .then((result) => {
-                        console.log("Respuesta del servidor:", result);
-                        alert('¡Gracias por registrarte! Un operador se pondrá en contacto contigo pronto para confirmar tu pedido con 50% de descuento.');
-                        event.target.reset();
-                    })
-                    .catch((error) => {
-                        alert('Teléfono inválido. Revisa el número ingresado.');
-                        console.error(error)
-                    });
 
-            } catch (error) {
-                console.error("Error en el envío:", error);
-            }
+
+            // try {
+            //     const myHeaders = new Headers();
+            //     myHeaders.append("Content-Type", "application/json");
+            //     myHeaders.append("Allow-Control-Allow-Origin", "*");
+
+            //     const raw = JSON.stringify({
+            //         "nombres": nombres,
+            //         "telefono": codigo2 + " " + telefono,
+            //         "departamento": ciudad,
+            //         "comentario": comentario,
+            //     });
+
+            //     const requestOptions = {
+            //         method: "POST",
+            //         headers: myHeaders,
+            //         body: raw,
+            //         redirect: "follow",
+            //         mode: "no-cors"
+            //     };
+            //     // fetch("http://192.168.2.1:30051/rest/campana/me_interesa/3ecfe8db-31cc-4d02-9176-414b6f43ce8c", requestOptions) //prueba servisofts
+            //     fetch("https://crm.servisofts.com/http/rest/campana/me_interesa/c145d4a2-ed14-434a-a0d9-7d394e426d1c", requestOptions) //producción
+            //         .then(response => response.text())
+            //         .then((result) => {
+            //             console.log("Respuesta del servidor:", result);
+            //             alert('¡Gracias por registrarte! Un operador se pondrá en contacto contigo pronto para confirmar tu pedido con 50% de descuento.');
+            //             event.target.reset();
+            //         })
+            //         .catch((error) => {
+            //             alert('Teléfono inválido. Revisa el número ingresado.');
+            //             console.error(error)
+            //         });
+
+            // } catch (error) {
+            //     console.error("Error en el envío:", error);
+            // }
 
 
         }
