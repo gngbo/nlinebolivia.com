@@ -32,8 +32,8 @@ function subirLeads({
             .then(response => response.text())
             .then((result) => {
                 console.log("Respuesta del servidor:", result);
-                alert('¡Gracias por registrarte! Un operador se pondrá en contacto contigo pronto para confirmar tu pedido con 50% de descuento.');
-                event.target.reset();
+                // alert('¡Gracias por registrarte! Un operador se pondrá en contacto contigo pronto para confirmar tu pedido con 50% de descuento.');
+                // event.target.reset();
             })
             .catch((error) => {
                 alert('Teléfono inválido. Revisa el número ingresado.');
