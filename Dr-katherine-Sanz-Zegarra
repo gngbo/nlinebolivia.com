@@ -1,1 +1,1089 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Katherine Sanz Zegarra - NLine Research</title>
+    <meta name="description" content="Investigación avanzada en obesidad por la Dra. Katherine Sanz Zegarra. Descubre NLine, el suplemento natural revolucionario para pérdida de peso.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- jsPDF Library for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <style>
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .5;
+            }
+        }
+        
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .animate-bounce {
+            animation: bounce 1s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(-25%);
+                animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+            }
+            50% {
+                transform: translateY(0);
+                animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            }
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .backdrop-blur {
+            backdrop-filter: blur(8px);
+        }
+        
+        .transform {
+            transform: translateZ(0);
+        }
+        
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        
+        .hover\:scale-110:hover {
+            transform: scale(1.1);
+        }
+        
+        .hover\:-translate-y-2:hover {
+            transform: translateY(-0.5rem);
+        }
+        
+        .scale-110 {
+            transform: scale(1.1);
+        }
+        
+        .-translate-y-2 {
+            transform: translateY(-0.5rem);
+        }
+        
+        .hover\:scale-105:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">N</span>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-900">NLine Research</h1>
+                        <p class="text-sm text-gray-600">Dra. Katherine Sanz Zegarra</p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#investigacion" class="text-gray-700 hover:text-purple-600 transition-colors">Investigación</a>
+                    <a href="#producto" class="text-gray-700 hover:text-purple-600 transition-colors">NLine</a>
+                    <a href="#resultados" class="text-gray-700 hover:text-purple-600 transition-colors">Resultados</a>
+                    <a href="#testimonios" class="text-gray-700 hover:text-purple-600 transition-colors">Testimonios</a>
+                </nav>
+            </div>
+        </div>
+    </header>
 
+    <!-- Hero Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="inline-block mb-4 bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
+                        Investigación Avanzada en Obesidad
+                    </span>
+                    <h2 class="text-5xl font-bold text-gray-900 mb-6">Dra. Katherine Sanz Zegarra</h2>
+                    <p class="text-xl text-gray-600 mb-6">
+                        Directora de Investigación Avanzada sobre la Obesidad y creadora del revolucionario producto
+                        <span class="font-semibold text-purple-600">NLine</span>, una solución natural y científicamente
+                        probada para la pérdida de peso efectiva.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all">
+                            Conocer la Investigación
+                        </button>
+                        <button class="border border-purple-600 text-purple-600 hover:bg-purple-50 px-6 py-3 rounded-lg font-semibold transition-all">
+                            Ver Resultados
+                        </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-1ac8-622f-b15c-d6ce4ae966b9/raw?se=2025-06-10T06%3A25%3A24Z&sp=r&sv=2024-08-04&sr=b&scid=300b834f-7ac0-5f7a-9671-70fc859aab46&skoid=e9d2f8b1-028a-4cff-8eb1-d0e66fbefcca&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-06-10T02%3A54%3A27Z&ske=2025-06-11T02%3A54%3A27Z&sks=b&skv=2024-08-04&sig=2aMAy3LF8iEn7y5fIeB1TGBLWqz3Uy7fnlg2hmxCHNg%3D" alt="Dra. Katherine Sanz Zegarra" class="w-full h-auto object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg">
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="award" class="w-6 h-6 text-purple-600"></i>
+                            <div>
+                                <div class="font-semibold text-gray-900">15+ Años</div>
+                                <div class="text-sm text-gray-600">Experiencia</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credenciales -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Credenciales y Experiencia</h3>
+                <p class="text-lg text-gray-600">Una trayectoria dedicada a la investigación científica</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="award" class="w-8 h-8 text-purple-600"></i>
+                    </div>
+                    <div class="text-3xl font-bold text-purple-600 mb-2">PhD</div>
+                    <div class="text-sm text-gray-600">Nutrición y Metabolismo</div>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="microscope" class="w-8 h-8 text-pink-600"></i>
+                    </div>
+                    <div class="text-3xl font-bold text-pink-600 mb-2">200+</div>
+                    <div class="text-sm text-gray-600">Estudios Publicados</div>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="users" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <div class="text-3xl font-bold text-blue-600 mb-2">5,000+</div>
+                    <div class="text-sm text-gray-600">Pacientes Tratados</div>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="trending-down" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <div class="text-3xl font-bold text-green-600 mb-2">92%</div>
+                    <div class="text-sm text-gray-600">Tasa de Éxito</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investigación -->
+    <section id="investigacion" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Proceso de Investigación</h3>
+                <p class="text-lg text-gray-600">Años de investigación científica rigurosa</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-6">
+                    <div class="w-full h-48 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg mb-4 flex items-center justify-center">
+                        <img src="https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-1ac8-622f-b15c-d6ce4ae966b9/raw?se=2025-06-10T06%3A25%3A24Z&sp=r&sv=2024-08-04&sr=b&scid=300b834f-7ac0-5f7a-9671-70fc859aab46&skoid=e9d2f8b1-028a-4cff-8eb1-d0e66fbefcca&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-06-10T02%3A54%3A27Z&ske=2025-06-11T02%3A54%3A27Z&sks=b&skv=2024-08-04&sig=2aMAy3LF8iEn7y5fIeB1TGBLWqz3Uy7fnlg2hmxCHNg%3D" alt="Análisis de laboratorio" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    <h4 class="flex items-center gap-2 text-xl font-bold text-gray-900 mb-3">
+                        <i data-lucide="flask-conical" class="w-5 h-5 text-blue-600"></i>
+                        Fase 1: Análisis Metabólico
+                    </h4>
+                    <p class="text-gray-600">
+                        Estudios exhaustivos sobre el metabolismo de las grasas y los factores que influyen en la obesidad.
+                        Análisis de más de 2,000 muestras biológicas.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-6">
+                    <div class="w-full h-48 bg-gradient-to-br from-green-100 to-green-200 rounded-lg mb-4 flex items-center justify-center">
+                        <img src="https://i.postimg.cc/bsY5r2xJ/Chat-GPT-Image-10-jun-2025-01-55-21.png"alt="Análisis de laboratorio" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    <h4 class="flex items-center gap-2 text-xl font-bold text-gray-900 mb-3">
+                        <i data-lucide="microscope" class="w-5 h-5 text-green-600"></i>
+                        Fase 2: Ingredientes Naturales
+                    </h4>
+                    <p class="text-gray-600">
+                        Investigación de compuestos naturales como Nopal Cactus, Té Verde y Ortiga. Pruebas de eficacia y
+                        seguridad en laboratorio.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-6">
+                    <div class="w-full h-48 bg-gradient-to-br from-purple-100 to-purple-200 rounded-lg mb-4 flex items-center justify-center">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Ensayos clínicos" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    <h4 class="flex items-center gap-2 text-xl font-bold text-gray-900 mb-3">
+                        <i data-lucide="bar-chart-3" class="w-5 h-5 text-purple-600"></i>
+                        Fase 3: Ensayos Clínicos
+                    </h4>
+                    <p class="text-gray-600">
+                        Ensayos clínicos controlados con 1,500 participantes durante 12 meses. Resultados documentados y
+                        verificados por terceros.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Producto NLine -->
+    <section id="producto" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="inline-block mb-4 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
+                        Producto Revolucionario
+                    </span>
+                    <h3 class="text-4xl font-bold text-gray-900 mb-6">NLine</h3>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Después de años de investigación, la Dra. Katherine Sanz Zegarra ha desarrollado NLine, un suplemento
+                        natural que combina ingredientes científicamente probados para una pérdida de peso efectiva y segura.
+                    </p>
+
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-green-600"></i>
+                            <span class="text-gray-700">
+                                <strong>Control del Apetito:</strong> Reduce la sensación de hambre naturalmente
+                            </span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-green-600"></i>
+                            <span class="text-gray-700">
+                                <strong>Quema de Grasa:</strong> Acelera el metabolismo de forma segura
+                            </span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-green-600"></i>
+                            <span class="text-gray-700">
+                                <strong>Desintoxicación Natural:</strong> Elimina toxinas del organismo
+                            </span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-green-600"></i>
+                            <span class="text-gray-700">
+                                <strong>Sin Químicos:</strong> 100% ingredientes naturales
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg">
+                        <h4 class="font-semibold text-gray-900 mb-3">Ingredientes Principales:</h4>
+                        <div class="grid grid-cols-2 gap-3 text-sm">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                <span>Nopal Cactus</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                <span>Té Verde</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                <span>Ortiga</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                <span>Extractos Naturales</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-purple-100 to-pink-100 p-8">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Imagen_de_WhatsApp_2025-05-26_a_las_00.30.33_2a664df2_5cc68ac3-b1f2-4c59-be79-18b4bb4318f4-rHHiUtL4SEX1Sy7lmRUi9rYQPZTgq5.webp" alt="NLine - Producto para bajar de peso" class="w-full h-auto object-contain">
+                    </div>
+                    <div class="absolute -top-4 -right-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white p-3 rounded-full">
+                        <i data-lucide="star" class="w-6 h-6"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resultados -->
+    <section id="resultados" class="py-16 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Resultados Comprobados</h3>
+                <p class="text-lg text-gray-600">Datos reales de nuestros estudios clínicos</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div class="text-center bg-white/80 backdrop-blur rounded-lg p-6 shadow-lg">
+                    <div class="text-4xl font-bold text-purple-600 mb-2">15kg</div>
+                    <div class="text-sm text-gray-600">Pérdida promedio de peso</div>
+                    <div class="text-xs text-gray-500 mt-1">en 3 meses</div>
+                </div>
+                <div class="text-center bg-white/80 backdrop-blur rounded-lg p-6 shadow-lg">
+                    <div class="text-4xl font-bold text-pink-600 mb-2">92%</div>
+                    <div class="text-sm text-gray-600">Tasa de éxito</div>
+                    <div class="text-xs text-gray-500 mt-1">participantes satisfechos</div>
+                </div>
+                <div class="text-center bg-white/80 backdrop-blur rounded-lg p-6 shadow-lg">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">30%</div>
+                    <div class="text-sm text-gray-600">Reducción del apetito</div>
+                    <div class="text-xs text-gray-500 mt-1">en la primera semana</div>
+                </div>
+                <div class="text-center bg-white/80 backdrop-blur rounded-lg p-6 shadow-lg">
+                    <div class="text-4xl font-bold text-green-600 mb-2">0</div>
+                    <div class="text-sm text-gray-600">Efectos secundarios</div>
+                    <div class="text-xs text-gray-500 mt-1">reportados</div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="bg-white/80 backdrop-blur rounded-lg shadow-lg p-6">
+                    <h4 class="text-xl font-bold text-gray-900 mb-2">Gráfico de Pérdida de Peso</h4>
+                    <p class="text-gray-600 mb-4">Progreso promedio durante 12 semanas</p>
+                    <div class="h-64 bg-gradient-to-br from-purple-100 to-pink-100 rounded-lg flex items-center justify-center">
+                        <img src="https://sdmntprwestus3.oaiusercontent.com/files/00000000-e638-61fd-a12a-fa35501a2673/raw?se=2025-06-10T05%3A34%3A07Z&sp=r&sv=2024-08-04&sr=b&scid=3bba6bb7-0ada-5094-b2f5-c5ec5ddb6893&skoid=c953efd6-2ae8-41b4-a6d6-34b1475ac07c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-06-09T23%3A39%3A30Z&ske=2025-06-10T23%3A39%3A30Z&sks=b&skv=2024-08-04&sig=gvHv2ODgz7VSDu6RsG2pzwzmcjA5dBmDdmpKBqP9hd8%3D" alt="Gráfico de pérdida de peso" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <div class="bg-white/80 backdrop-blur rounded-lg shadow-lg p-6">
+                    <h4 class="text-xl font-bold text-gray-900 mb-2">Comparación de Métodos</h4>
+                    <p class="text-gray-600 mb-4">NLine vs. otros métodos de pérdida de peso</p>
+                    <div class="h-64 bg-gradient-to-br from-blue-100 to-green-100 rounded-lg flex items-center justify-center">
+                        <img src="https://sdmntprcentralus.oaiusercontent.com/files/00000000-c148-61f5-b299-e0095d368338/raw?se=2025-06-10T05%3A37%3A01Z&sp=r&sv=2024-08-04&sr=b&scid=f6bf9f03-5f53-5dcd-a007-fc6554000a45&skoid=c953efd6-2ae8-41b4-a6d6-34b1475ac07c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-06-09T14%3A43%3A31Z&ske=2025-06-10T14%3A43%3A31Z&sks=b&skv=2024-08-04&sig=WWOn9fXX%2B3BC6uZOtN7OaD86o/cQHtI53GbVkWYSzj4%3D" alt="Comparación de métodos" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonios" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Testimonios Reales</h3>
+                <p class="text-lg text-gray-600">Historias de éxito de nuestros pacientes</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Testimonio 1 - Estructura actualizada -->
+                <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-6">
+                    <div class="text-center mb-4">
+                        <img src="https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-d528-61f7-932a-53e49b1065fa/raw?se=2025-06-10T05%3A39%3A52Z&sp=r&sv=2024-08-04&sr=b&scid=bae2c8b3-2cb1-591c-97f8-6204faefffb9&skoid=c953efd6-2ae8-41b4-a6d6-34b1475ac07c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-06-09T14%3A46%3A35Z&ske=2025-06-10T14%3A46%3A35Z&sks=b&skv=2024-08-04&sig=tml6TYFVTlqp87uCoULlh5MDK9S7FetnLHxernnmSrk%3D" alt="María González" class="w-24 h-24 rounded-full mx-auto object-cover border-4 border-purple-100">
+                        <h4 class="font-bold text-gray-900 text-xl mt-3">María González</h4>
+                        <div class="flex justify-center text-yellow-400 mt-1">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                    </div>
+                    <i data-lucide="quote" class="w-8 h-8 text-purple-200 mb-2"></i>
+                    <p class="text-gray-600 italic">
+                        "Perdí 18kg en 4 meses con NLine. Lo mejor es que no sentí ansiedad ni efectos secundarios. La Dra.
+                        Katherine cambió mi vida completamente."
+                    </p>
+                    <div class="mt-4 text-sm text-purple-600 font-semibold text-center">Perdió 18kg en 4 meses</div>
+                </div>
+
+                <!-- Testimonio 2 - Estructura actualizada -->
+                <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-6">
+                    <div class="text-center mb-4">
+                        <img src="https://sdmntprwestus3.oaiusercontent.com/files/00000000-8a2c-61fd-91bc-846e511dfadd/raw?se=2025-06-10T05%3A46%3A14Z&sp=r&sv=2024-08-04&sr=b&scid=e0a0bbb6-1457-51bc-b3e6-628f3d4b7d58&skoid=c953efd6-2ae8-41b4-a6d6-34b1475ac07c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-06-09T13%3A53%3A05Z&ske=2025-06-10T13%3A53%3A05Z&sks=b&skv=2024-08-04&sig=de8t0VeMybazxDOTKLEy9N/Z0ZNND8Yg0aGKqlVgcHk%3D" alt="Carlos Mendoza" class="w-24 h-24 rounded-full mx-auto object-cover border-4 border-blue-100">
+                        <h4 class="font-bold text-gray-900 text-xl mt-3">Carlos Mendoza</h4>
+                        <div class="flex justify-center text-yellow-400 mt-1">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                    </div>
+                    <i data-lucide="quote" class="w-8 h-8 text-purple-200 mb-2"></i>
+                    <p class="text-gray-600 italic">
+                        "Como diabético, necesitaba una solución segura. NLine no solo me ayudó a perder peso, sino que mejoró
+                        mis niveles de glucosa. Increíble investigación."
+                    </p>
+                    <div class="mt-4 text-sm text-purple-600 font-semibold text-center">Perdió 22kg en 5 meses</div>
+                </div>
+
+                <!-- Testimonio 3 - Estructura actualizada -->
+                <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-6">
+                    <div class="text-center mb-4">
+                        <img src="https://sdmntprwestus3.oaiusercontent.com/files/00000000-0d00-61fd-a67c-a427cd1d3736/raw?se=2025-06-10T05%3A49%3A02Z&sp=r&sv=2024-08-04&sr=b&scid=07cbfe3e-8911-59b1-a579-d06badf937ea&skoid=c953efd6-2ae8-41b4-a6d6-34b1475ac07c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-06-10T02%3A54%3A46Z&ske=2025-06-11T02%3A54%3A46Z&sks=b&skv=2024-08-04&sig=kXad5QTdFIOphkvr%2BOUrO4fgJSztXaCf9%2BmelEltQ%2Bg%3D" alt="Ana Rodríguez" class="w-24 h-24 rounded-full mx-auto object-cover border-4 border-pink-100">
+                        <h4 class="font-bold text-gray-900 text-xl mt-3">Ana Rodríguez</h4>
+                        <div class="flex justify-center text-yellow-400 mt-1">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                    </div>
+                    <i data-lucide="quote" class="w-8 h-8 text-purple-200 mb-2"></i>
+                    <p class="text-gray-600 italic">
+                        "Después de probar muchas dietas, NLine fue lo único que funcionó. El respaldo científico de la Dra.
+                        Katherine me dio la confianza que necesitaba."
+                    </p>
+                    <div class="mt-4 text-sm text-purple-600 font-semibold text-center">Perdió 14kg en 3 meses</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Juego de Descuentos -->
+    <section class="py-16 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+        <div id="discount-game" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Pantalla inicial -->
+            <div id="game-start" class="game-screen">
+                <div class="mb-8">
+                    <i data-lucide="sparkles" class="w-16 h-16 mx-auto mb-4 text-yellow-300"></i>
+                    <h3 class="text-4xl font-bold mb-4">¡Momento Especial!</h3>
+                    <p class="text-xl mb-6 opacity-90">
+                        Antes de continuar, tienes la oportunidad de ganar un descuento exclusivo
+                    </p>
+                    <p class="text-lg opacity-80">Elige una de las 3 cajas misteriosas y descubre tu premio</p>
+                </div>
+                <button onclick="startGame()" class="bg-yellow-500 text-purple-900 hover:bg-yellow-400 font-bold text-xl px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200">
+                    🎁 ¡Jugar Ahora! 🎁
+                </button>
+            </div>
+
+            <!-- Pantalla del juego -->
+            <div id="game-boxes" class="game-screen hidden">
+                <div class="mb-8">
+                    <h3 class="text-3xl font-bold mb-4">¡Elige tu Caja de la Suerte!</h3>
+                    <p class="text-lg opacity-90">Cada caja contiene un descuento sorpresa. ¡Elige sabiamente!</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 mb-8">
+                    <div class="box-container cursor-pointer transform transition-all duration-300 hover:scale-110 hover:-translate-y-2" onclick="selectBox(1)">
+                        <div class="bg-gradient-to-br from-yellow-400 to-orange-500 p-8 rounded-2xl shadow-2xl">
+                            <div class="bg-white/20 backdrop-blur rounded-xl p-6 mb-4">
+                                <i data-lucide="gift" class="w-12 h-12 mx-auto text-white mb-2"></i>
+                                <div class="text-2xl font-bold text-white">Caja #1</div>
+                            </div>
+                            <div class="text-white text-center">
+                                <div class="text-lg opacity-90">Descuento</div>
+                                <div class="text-3xl font-bold">Sorpresa</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box-container cursor-pointer transform transition-all duration-300 hover:scale-110 hover:-translate-y-2" onclick="selectBox(2)">
+                        <div class="bg-gradient-to-br from-blue-400 to-purple-500 p-8 rounded-2xl shadow-2xl">
+                            <div class="bg-white/20 backdrop-blur rounded-xl p-6 mb-4">
+                                <i data-lucide="gift" class="w-12 h-12 mx-auto text-white mb-2"></i>
+                                <div class="text-2xl font-bold text-white">Caja #2</div>
+                            </div>
+                            <div class="text-white text-center">
+                                <div class="text-lg opacity-90">Descuento</div>
+                                <div class="text-3xl font-bold">Sorpresa</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box-container cursor-pointer transform transition-all duration-300 hover:scale-110 hover:-translate-y-2" onclick="selectBox(3)">
+                        <div class="bg-gradient-to-br from-green-400 to-teal-500 p-8 rounded-2xl shadow-2xl">
+                            <div class="bg-white/20 backdrop-blur rounded-xl p-6 mb-4">
+                                <i data-lucide="gift" class="w-12 h-12 mx-auto text-white mb-2"></i>
+                                <div class="text-2xl font-bold text-white">Caja #3</div>
+                            </div>
+                            <div class="text-white text-center">
+                                <div class="text-lg opacity-90">Descuento</div>
+                                <div class="text-3xl font-bold">Sorpresa</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="loading" class="hidden text-center">
+                    <div class="animate-spin w-8 h-8 border-4 border-white border-t-transparent rounded-full mx-auto mb-4"></div>
+                    <p class="text-lg">Revelando tu premio...</p>
+                </div>
+
+                <div id="discount-reveal" class="hidden bg-white/10 backdrop-blur rounded-2xl p-6 animate-bounce">
+                    <h4 class="text-2xl font-bold mb-2">🎉 ¡FELICIDADES! 🎉</h4>
+                    <p class="text-lg">Has ganado un increíble descuento del 50%</p>
+                    <p class="text-sm opacity-80 mt-2">Completando el formulario a continuación...</p>
+                </div>
+            </div>
+
+            <!-- Formulario -->
+            <div id="form-screen" class="game-screen hidden">
+                <div class="bg-white rounded-2xl shadow-2xl overflow-hidden text-gray-900">
+                    <div class="bg-gradient-to-r from-yellow-400 to-orange-500 p-6 text-center">
+                        <div class="flex items-center justify-center mb-4">
+                            <i data-lucide="gift" class="w-12 h-12 text-white mr-3"></i>
+                            <div>
+                                <h3 class="text-3xl font-bold text-white">¡FELICIDADES!</h3>
+                                <p class="text-xl text-white/90">Has ganado un 50% de descuento</p>
+                            </div>
+                        </div>
+                        <div class="bg-white/20 backdrop-blur rounded-lg p-4 inline-block">
+                            <span class="text-4xl font-bold text-white">50% OFF</span>
+                        </div>
+                    </div>
+
+                    <div class="p-8">
+                        <div class="text-center mb-8">
+                            <h4 class="text-2xl font-bold text-gray-900 mb-2">Completa tus datos para recibir tu descuento</h4>
+                            <p class="text-gray-600">
+                                Nos pondremos en contacto contigo para procesar tu pedido con descuento + recibirás una guía gratuita
+                            </p>
+                        </div>
+
+                        <form id="discount-form" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="flex items-center text-sm font-medium text-gray-700 mb-2">
+                                        <i data-lucide="user" class="w-4 h-4 mr-2 text-purple-600"></i>
+                                        Nombre Completo *
+                                    </label>
+                                    <input type="text" name="nombreCompleto" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900" placeholder="Ingresa tu nombre completo">
+                                </div>
+
+                                <div>
+                                    <label class="flex items-center text-sm font-medium text-gray-700 mb-2">
+                                        <i data-lucide="phone" class="w-4 h-4 mr-2 text-purple-600"></i>
+                                        Teléfono *
+                                    </label>
+                                    <input type="tel" name="telefono" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900" placeholder="Ingresa tu número de teléfono">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="flex items-center text-sm font-medium text-gray-700 mb-2">
+                                    <i data-lucide="map-pin" class="w-4 h-4 mr-2 text-purple-600"></i>
+                                    Departamento *
+                                </label>
+                                <select name="departamento" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900">
+                                    <option value="">Selecciona tu departamento</option>
+                                    <option value="Santa Cruz">Santa Cruz</option>
+                                    <option value="La Paz">La Paz</option>
+                                    <option value="Cochabamba">Cochabamba</option>
+                                    <option value="Pando">Pando</option>
+                                    <option value="Beni">Beni</option>
+                                    <option value="Oruro">Oruro</option>
+                                    <option value="Chuquisaca">Chuquisaca</option>
+                                    <option value="Tarija">Tarija</option>
+                                    <option value="Potosí">Potosí</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="flex items-center text-sm font-medium text-gray-700 mb-2">
+                                    <i data-lucide="message-square" class="w-4 h-4 mr-2 text-purple-600"></i>
+                                    Comentario (Opcional)
+                                </label>
+                                <textarea name="comentario" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900" placeholder="Cuéntanos sobre tus objetivos de pérdida de peso..."></textarea>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="submit" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-purple-700 hover:to-pink-700 transform hover:scale-105 transition-all duration-200 shadow-lg">
+                                    🎁 Reclamar Mi Descuento + Guía Gratuita 🎁
+                                </button>
+                                <p class="text-sm text-gray-500 mt-3">
+                                    * Campos obligatorios. Tu información está segura con nosotros.
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pantalla de descarga -->
+            <div id="guide-screen" class="game-screen hidden">
+                <div class="bg-white rounded-2xl shadow-2xl overflow-hidden text-gray-900">
+                    <div class="bg-gradient-to-r from-green-400 to-blue-500 p-6 text-center">
+                        <div class="flex items-center justify-center mb-4">
+                            <i data-lucide="gift" class="w-12 h-12 text-white mr-3"></i>
+                            <div>
+                                <h3 class="text-3xl font-bold text-white">¡REGISTRO EXITOSO!</h3>
+                                <p class="text-xl text-white/90">Tu descuento del 50% está confirmado</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-8 text-center">
+                        <div class="mb-8">
+                            <div class="w-20 h-20 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="file-text" class="w-12 h-12 text-purple-600"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-gray-900 mb-4">
+                                🎁 REGALO ESPECIAL: Guía Express para la Pérdida de Peso
+                            </h4>
+                            <p class="text-lg text-gray-600 mb-2">
+                                <strong>"Lo que Nadie Te Cuenta"</strong>
+                            </p>
+                            <p class="text-gray-600 mb-6">Por la Dra. Katherine Sanz Zegarra - Descarga inmediata y gratuita</p>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg mb-8">
+                            <h5 class="font-semibold text-gray-900 mb-4">Lo que aprenderás en esta guía:</h5>
+                            <div class="grid md:grid-cols-2 gap-4 text-left">
+                                <div class="flex items-start space-x-2">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mt-0.5"></i>
+                                    <span class="text-sm text-gray-700">Estrategias para perder peso sin dietas restrictivas</span>
+                                </div>
+                                <div class="flex items-start space-x-2">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mt-0.5"></i>
+                                    <span class="text-sm text-gray-700">La importancia de los suplementos naturales</span>
+                                </div>
+                                <div class="flex items-start space-x-2">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mt-0.5"></i>
+                                    <span class="text-sm text-gray-700">Consejos fáciles y prácticos de transformación</span>
+                                </div>
+                                <div class="flex items-start space-x-2">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mt-0.5"></i>
+                                    <span class="text-sm text-gray-700">La fórmula natural de ingredientes de NLine</span>
+                                </div>
+                                <div class="flex items-start space-x-2">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mt-0.5"></i>
+                                    <span class="text-sm text-gray-700">Secretos del té verde, nopal y garcinia cambogia</span>
+                                </div>
+                                <div class="flex items-start space-x-2">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mt-0.5"></i>
+                                    <span class="text-sm text-gray-700">Tips para potenciar los resultados naturalmente</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <button onclick="downloadGuide()" class="w-full bg-gradient-to-r from-green-600 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-green-700 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg">
+                                📥 Descargar Guía Gratuita (PDF)
+                            </button>
+
+                            <p class="text-sm text-gray-500">
+                                También recibirás tu guía por email junto con información sobre tu descuento del 50%
+                            </p>
+
+                            <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-6">
+                                <div class="flex items-center">
+                                    <i data-lucide="sparkles" class="w-5 h-5 text-yellow-600 mr-2"></i>
+                                    <p class="text-sm text-yellow-800">
+                                        <strong>¡No olvides!</strong> Nos pondremos en contacto contigo pronto para procesar tu pedido de
+                                        NLine con el 50% de descuento.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">N</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">NLine Research</h3>
+                            <p class="text-sm text-gray-400">Dra. Katherine Sanz Zegarra</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400">
+                        Investigación científica avanzada para soluciones naturales de pérdida de peso.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Investigación</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Estudios Clínicos</li>
+                        <li>Publicaciones</li>
+                        <li>Metodología</li>
+                        <li>Resultados</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">NLine</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Ingredientes</li>
+                        <li>Beneficios</li>
+                        <li>Cómo Funciona</li>
+                        <li>Testimonios</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>info@nlineresearch.com</li>
+                        <li>+1 (555) 123-4567</li>
+                        <li>Consultas Médicas</li>
+                        <li>Soporte Técnico</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 NLine Research - Dra. Katherine Sanz Zegarra. Todos los derechos reservados.</p>
+                <p class="text-sm mt-2">
+                    Los resultados pueden variar. Consulte a su médico antes de usar cualquier suplemento.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Inicializar iconos de Lucide
+        lucide.createIcons();
+
+        let selectedBox = null;
+
+        function startGame() {
+            document.getElementById('game-start').classList.add('hidden');
+            document.getElementById('game-boxes').classList.remove('hidden');
+        }
+
+        function selectBox(boxNumber) {
+            if (selectedBox) return;
+            
+            selectedBox = boxNumber;
+            
+            // Deshabilitar otras cajas
+            const boxes = document.querySelectorAll('.box-container');
+            boxes.forEach((box, index) => {
+                if (index + 1 !== boxNumber) {
+                    box.style.opacity = '0.5';
+                    box.style.pointerEvents = 'none';
+                } else {
+                    box.classList.add('scale-110', '-translate-y-2');
+                }
+            });
+
+            // Mostrar loading
+            document.getElementById('loading').classList.remove('hidden');
+
+            // Después de 1 segundo, mostrar el descuento
+            setTimeout(() => {
+                document.getElementById('loading').classList.add('hidden');
+                
+                // Crear overlay de premio en la caja seleccionada
+                const selectedBoxElement = boxes[boxNumber - 1];
+                const overlay = document.createElement('div');
+                overlay.className = 'absolute inset-0 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center animate-pulse';
+                overlay.innerHTML = `
+                    <div class="text-center">
+                        <div class="text-6xl font-bold text-white mb-2">50%</div>
+                        <div class="text-xl text-white">¡DESCUENTO!</div>
+                        <i data-lucide="sparkles" class="w-8 h-8 mx-auto mt-2 text-white animate-spin"></i>
+                    </div>
+                `;
+                
+                selectedBoxElement.style.position = 'relative';
+                selectedBoxElement.appendChild(overlay);
+                lucide.createIcons();
+                
+                document.getElementById('discount-reveal').classList.remove('hidden');
+
+                // Después de 2 segundos, mostrar formulario
+                setTimeout(() => {
+                    document.getElementById('game-boxes').classList.add('hidden');
+                    document.getElementById('form-screen').classList.remove('hidden');
+                }, 2000);
+            }, 1000);
+        }
+
+        // Función para generar el PDF con el contenido de la guía
+        function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            // Configurar fuente
+            doc.setFont("helvetica");
+            
+            // Título principal
+            doc.setFontSize(20);
+            doc.setTextColor(128, 0, 128); // Púrpura
+            doc.text('Guía Express para la Pérdida de Peso', 20, 30);
+            doc.setFontSize(16);
+            doc.text('"Lo que Nadie Te Cuenta"', 20, 45);
+            
+            // Subtítulo
+            doc.setFontSize(12);
+            doc.setTextColor(0, 0, 0); // Negro
+            doc.text('Por la Dra. Katherine Sanz Zegarra', 20, 60);
+            
+            // Introducción
+            doc.setFontSize(10);
+            const intro = `¡Bienvenido a tu transformación saludable!
+Soy la Dra. Katherine Sanz Zegarra, especialista en salud y bienestar, y quiero 
+compartir contigo una estrategia natural y sostenible para perder peso, 
+sin complicaciones ni dietas extremas. En esta guía, descubrirás cómo 
+la combinación de ingredientes naturales puede ayudarte a alcanzar tus 
+metas de pérdida de peso de manera efectiva y segura.`;
+            
+            const introLines = doc.splitTextToSize(intro, 170);
+            doc.text(introLines, 20, 80);
+            
+            // Lo que aprenderás
+            doc.setFontSize(14);
+            doc.setTextColor(128, 0, 128);
+            doc.text('Lo que aprenderás en esta guía:', 20, 130);
+            
+            doc.setFontSize(10);
+            doc.setTextColor(0, 0, 0);
+            doc.text('1. Estrategias para perder peso sin dietas restrictivas.', 25, 145);
+            doc.text('2. La importancia de los suplementos naturales para acelerar la pérdida de peso.', 25, 155);
+            doc.text('3. Consejos fáciles y prácticos para transformar tu cuerpo de manera efectiva.', 25, 165);
+            
+            // Nueva página
+            doc.addPage();
+            
+            // Por qué es diferente
+            doc.setFontSize(14);
+            doc.setTextColor(128, 0, 128);
+            doc.text('¿Por qué esta guía es diferente?', 20, 30);
+            
+            doc.setFontSize(10);
+            doc.setTextColor(0, 0, 0);
+            const diferente = `Olvídate de las dietas milagrosas que solo te dejan hambre y frustración. 
+Esta guía está basada en métodos naturales que puedes incorporar a tu 
+rutina diaria de manera sencilla, sin la necesidad de sacrificios extremos.`;
+            
+            const diferenteLines = doc.splitTextToSize(diferente, 170);
+            doc.text(diferenteLines, 20, 50);
+            
+            // La Fórmula Natural
+            doc.setFontSize(14);
+            doc.setTextColor(128, 0, 128);
+            doc.text('La Fórmula Natural para la Pérdida de Peso:', 20, 80);
+            doc.text('La Combinación Perfecta de Ingredientes', 20, 95);
+            
+            doc.setFontSize(10);
+            doc.setTextColor(0, 0, 0);
+            const formula = `Uno de los secretos para perder peso de manera efectiva es usar 
+ingredientes naturales que no solo sean efectivos, sino que también 
+funcionen en sinergia para maximizar los resultados. En NLINE, hemos 
+combinado tres ingredientes poderosos: té verde, cactus de nopal y 
+garcinia cambogia. Juntos, estos ingredientes ofrecen una solución 
+completa para quemar grasa, reducir el apetito y mejorar tu metabolismo.`;
+            
+            const formulaLines = doc.splitTextToSize(formula, 170);
+            doc.text(formulaLines, 20, 110);
+            
+            // Té Verde
+            doc.setFontSize(12);
+            doc.setTextColor(0, 128, 0);
+            doc.text('1. Té Verde: La Potencia Natural para Quemar Grasa', 20, 160);
+            
+            doc.setFontSize(10);
+            doc.setTextColor(0, 0, 0);
+            const teVerde = `El té verde es un ingrediente muy conocido por sus propiedades 
+termogénicas, que ayudan a acelerar el proceso de quema de grasa. Los 
+estudios han demostrado que el té verde aumenta la tasa metabólica, 
+lo que significa que tu cuerpo quema más calorías incluso mientras 
+descansas. Además, el té verde tiene antioxidantes que apoyan tu 
+sistema inmune y mejoran tu salud en general.`;
+            
+            const teVerdeLines = doc.splitTextToSize(teVerde, 170);
+            doc.text(teVerdeLines, 20, 175);
+            
+            // Beneficios del Té Verde
+            doc.text('• Quema de grasa', 25, 210);
+            doc.text('• Aceleración del metabolismo', 25, 220);
+            doc.text('• Mejora de la salud cardiovascular', 25, 230);
+            
+            // Nueva página
+            doc.addPage();
+            
+            // Cactus de Nopal
+            doc.setFontSize(12);
+            doc.setTextColor(0, 128, 0);
+            doc.text('2. Cactus de Nopal: Reducción del Apetito y Control de Peso', 20, 30);
+            
+            doc.setFontSize(10);
+            doc.setTextColor(0, 0, 0);
+            const nopal = `El cactus de nopal es un superalimento natural que tiene una rica 
+concentración de fibra. Esta fibra ayuda a reducir el apetito y mejorar el 
+proceso digestivo, lo que facilita la pérdida de peso sin pasar hambre. El 
+nopal también es rico en antioxidantes y nutrientes esenciales como 
+vitaminas A y C, que ayudan a desintoxicar el cuerpo y mantenerlo en 
+equilibrio.`;
+            
+            const nopalLines = doc.splitTextToSize(nopal, 170);
+            doc.text(nopalLines, 20, 45);
+            
+            // Beneficios del Nopal
+            doc.text('• Control del apetito', 25, 85);
+            doc.text('• Acelera la digestión', 25, 95);
+            doc.text('• Desintoxica el cuerpo', 25, 105);
+            
+            // Garcinia Cambogia
+            doc.setFontSize(12);
+            doc.setTextColor(0, 128, 0);
+            doc.text('3. Garcinia Cambogia: La Fórmula Natural para Bloquear la Grasa', 20, 125);
+            
+            doc.setFontSize(10);
+            doc.setTextColor(0, 0, 0);
+            const garcinia = `La garcinia cambogia es uno de los ingredientes más populares en el 
+mundo de la pérdida de peso debido a su capacidad para inhibir la 
+producción de grasa en el cuerpo. Además, es un supresor del apetito 
+natural, ayudando a las personas a consumir menos calorías a lo largo 
+del día. La garcinia también tiene efectos positivos sobre los niveles de 
+colesterol y puede mejorar la salud metabólica.`;
+            
+            const garciniaLines = doc.splitTextToSize(garcinia, 170);
+            doc.text(garciniaLines, 20, 140);
+            
+            // Beneficios de Garcinia
+            doc.text('• Inhibe la producción de grasa', 25, 180);
+            doc.text('• Supresor del apetito', 25, 190);
+            doc.text('• Mejora el metabolismo', 25, 200);
+            
+            // Nueva página
+            doc.addPage();
+            
+            // La Sinergia
+            doc.setFontSize(14);
+            doc.setTextColor(128, 0, 128);
+            doc.text('La Sinergia de los Ingredientes en NLINE', 20, 30);
+            
+            doc.setFontSize(10);
+            doc.setTextColor(0, 0, 0);
+            const sinergia = `Cuando estos tres ingredientes se combinan en una sola fórmula, crean 
+un suplemento poderoso que actúa en múltiples frentes para ayudar a 
+perder peso:`;
+            
+            const sinergiaLines = doc.splitTextToSize(sinergia, 170);
+            doc.text(sinergiaLines, 20, 45);
+            
+            doc.text('1. Aceleración de la quema de grasa (gracias al té verde y la garcinia)', 25, 65);
+            doc.text('2. Reducción del apetito (con el cactus de nopal y la garcinia)', 25, 75);
+            doc.text('3. Mejora del metabolismo (gracias a los antioxidantes y nutrientes)', 25, 85);
+            
+            const nlineText = `En NLINE, no solo ofrecemos un suplemento, ofrecemos una estrategia 
+completa para perder peso de manera saludable y natural. ¡Imagina lo 
+que puedes lograr cuando combinas estos ingredientes con hábitos de 
+vida saludables!`;
+            
+            const nlineLines = doc.splitTextToSize(nlineText, 170);
+            doc.text(nlineLines, 20, 105);
+            
+            // Consejos
+            doc.setFontSize(14);
+            doc.setTextColor(128, 0, 128);
+            doc.text('Consejos Fáciles para Potenciar los Resultados', 20, 140);
+            
+            doc.setFontSize(10);
+            doc.setTextColor(0, 0, 0);
+            const consejosIntro = `Además de tomar NLINE, aquí te dejo algunos consejos simples que 
+puedes incorporar en tu vida diaria para obtener los mejores resultados:`;
+            
+            const consejosIntroLines = doc.splitTextToSize(consejosIntro, 170);
+            doc.text(consejosIntroLines, 20, 155);
+            
+            doc.text('1. Mantén una dieta equilibrada: No es necesario hacer dietas', 25, 175);
+            doc.text('   estrictas. Opta por comidas saludables, ricas en proteínas y fibra.', 25, 185);
+            
+            doc.text('2. Ejercicio moderado: Incluir 30 minutos de actividad física', 25, 200);
+            doc.text('   diaria, como caminar, puede hacer una gran diferencia.', 25, 210);
+            
+            doc.text('3. Hidratarse correctamente: Beber suficiente agua durante el día', 25, 225);
+            doc.text('   es fundamental para mantener tu metabolismo activo.', 25, 235);
+            
+            // Nueva página
+            doc.addPage();
+            
+            doc.text('4. Descanso adecuado: El sueño es crucial para recuperar energías', 25, 30);
+            doc.text('   y optimizar el proceso de quema de grasa.', 25, 40);
+            
+            // Comienza Ahora
+            doc.setFontSize(14);
+            doc.setTextColor(128, 0, 128);
+            doc.text('¡Comienza Ahora!', 20, 70);
+            
+            doc.setFontSize(10);
+            doc.setTextColor(0, 0, 0);
+            const comenzar = `No esperes más para comenzar tu transformación. Descarga la guía 
+gratuita y sigue nuestros consejos prácticos para perder peso de manera 
+fácil y natural. Regístrate ahora y obtén acceso inmediato a la guía, junto 
+con el mejor suplemento para apoyar tu proceso: NLINE.`;
+            
+            const comenzarLines = doc.splitTextToSize(comenzar, 170);
+            doc.text(comenzarLines, 20, 85);
+            
+            // Pie de página
+            doc.setFontSize(8);
+            doc.setTextColor(100, 100, 100);
+            doc.text('© 2024 NLine Research - Dra. Katherine Sanz Zegarra', 20, 280);
+            doc.text('Los resultados pueden variar. Consulte a su médico antes de usar cualquier suplemento.', 20, 290);
+            
+            return doc;
+        }
+
+        // Manejar envío del formulario
+        document.getElementById('discount-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Aquí puedes enviar los datos a tu servidor
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            console.log('Datos del formulario:', data);
+            
+            // Generar y descargar automáticamente el PDF
+            const pdf = generatePDF();
+            pdf.save('Guia-Express-Perdida-Peso-NLine.pdf');
+            
+            // Mostrar pantalla de descarga después de un breve delay
+            setTimeout(() => {
+                document.getElementById('form-screen').classList.add('hidden');
+                document.getElementById('guide-screen').classList.remove('hidden');
+            }, 1000);
+        });
+
+        function downloadGuide() {
+            // Generar y descargar el PDF nuevamente si el usuario hace clic en el botón
+            const pdf = generatePDF();
+            pdf.save('Guia-Express-Perdida-Peso-NLine.pdf');
+        }
+
+        // Smooth scroll para navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
